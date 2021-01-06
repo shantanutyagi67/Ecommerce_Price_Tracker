@@ -4,7 +4,7 @@
 <p>Flipkart Product Web Scraper</p>
 
 <style> 
-input[type=text] {
+input {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -13,7 +13,7 @@ input[type=text] {
   outline: none;
 }
 
-input[type=text]:focus {
+input:focus {
   background-color: lightblue;
 }
 </style>
@@ -22,7 +22,7 @@ input[type=text]:focus {
 
 <form>
   <label for="url">URL</label>
-  <input type="text" id="url" name="url" placeholder="Enter Product URL">
+  <input type="url" id="url" name="url" placeholder="Enter Product URL">
   <label for="cost">Price</label>
   <input type="number" id="cost" name="cost" >
 </form>

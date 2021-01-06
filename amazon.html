@@ -20,12 +20,32 @@ input:focus {
 </head>
 <body>
 
-<form>
+<script type="text/javascript">
+     function handle(){
+        var url = document.getElementById("url").value;
+        var cost = document.getElementById("cost").value;
+		var mail = document.getElementById("mail").value;
+		
+		let data = url+","+cost+","+mail;
+		const a = document.createElement('a');
+		const file = new Blob([data], {type: 'text/plain'});
+		a.href= URL.createObjectURL(file);
+		a.download = 'info.txt';
+		a.click();
+		URL.revokeObjectURL(a.href);
+	}
+     </script>
+
+<form action="JavaScript:handle()" method="get" id="form1">
   <label for="url">URL</label>
   <input type="url" id="url" name="url" placeholder="Enter Product URL">
   <label for="cost">Price</label>
-  <input type="number" id="cost" name="cost" >
+  <input type="number" id="cost" name="cost" placeholder="Enter Desired Amount">
+  <label for="mail">Email</label>
+  <input type="email" id="mail" name="mail" placeholder="Enter Email ID">
 </form>
+<button type="submit" form="form1" value="Submit">Submit</button>
+
 
 </body>
 </html>
