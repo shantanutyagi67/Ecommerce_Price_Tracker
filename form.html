@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<p id = "site" style =  
+            "font-size: 15px; font-weight: bold;"> 
+        </p> 
+<style> 
+input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #555;
+  outline: none;
+}
+
+input:focus {
+  background-color: lightblue;
+}
+</style>
+</head>
+<body>
+
+<script type="text/javascript">
+	var text = window.location.hash.substring(1);
+	var text_up = document.getElementById("site");
+	text_up.innerHTML = text + " Product Web Scraper";
+	function handle(){
+	var url = document.getElementById("url").value;
+	var cost = document.getElementById("cost").value;
+	var mail = document.getElementById("mail").value;
+
+	let data = url+","+cost+","+mail;
+	const a = document.createElement('a');
+	const file = new Blob([data], {type: 'text/plain'});
+	a.href= URL.createObjectURL(file);
+	a.download = 'info.txt';
+	a.click();
+	URL.revokeObjectURL(a.href);
+	}
+     </script>
+
+<form action="JavaScript:handle()" method="get" id="form1">
+  <label for="url">URL</label>
+  <input type="url" id="url" name="url" placeholder="Enter Product URL" required>
+  <label for="cost">Price</label>
+  <input type="number" id="cost" name="cost" placeholder="Enter Desired Amount" required>
+  <label for="mail">Email</label>
+  <input type="email" id="mail" name="mail" placeholder="Enter Email ID" required>
+</form>
+<button type="submit" form="form1" value="Submit">Submit</button>
+
+
+</body>
+</html>

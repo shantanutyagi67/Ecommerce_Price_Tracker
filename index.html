@@ -49,11 +49,18 @@
 </style>
 </head>
 <body>
-
+<script>   
+	function test(clicked) { 
+		var text = clicked;
+		window.location.href = 'form.html' + '#' + text; 
+	}
+</script>
 <h1>Please select the website</h1>
 
-<a href="flipkart.html"><button class="button button1">Flipkart</button></a>
-<a href="amazon.html"><button class="button button2">Amazon</button></a>
-<a href="ebay.html"><button class="button button3">Ebay</button></a>
+<button class="button button1" id="Flipkart" onClick="test(this.id)">Flipkart</button>
+<button class="button button2" id="Amazon" onclick="test(this.id)">Amazon</button>
+<button class="button button3" id="Ebay" onclick="test(this.id)">Ebay</button>
+
+
 </body>
 </html>
