@@ -149,7 +149,7 @@ def scrape(url, price, email):
         # The mail addresses and password
         #validation = pd.read_csv(r'C:\Users\geekSA67\code\validation\validation.csv')
         sender_address = "shantanutyagi67@gmail.com"#validation['email'][0]
-        sender_pass = "#233767543Hacker9099654327"#validation['pass'][0]
+        sender_pass = "********"#validation['pass'][0]
         receiver_address = myEmail
         # Setup the MIME
         message = MIMEMultipart()
